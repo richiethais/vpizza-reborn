@@ -44,24 +44,40 @@ const Sidebar = () => {
       </aside>
 
       {/* Mobile nav overlay */}
-      {open && (
-        <div className="fixed inset-0 z-40 bg-background pt-20 px-6 overflow-y-auto md:hidden">
-          <div className="flex flex-col items-center mb-6">
-            <img src={fatboyLogo} alt="Fatboy Fried Rice" className="h-24 w-auto mb-2" />
-          </div>
-          <nav className="flex flex-col gap-1">
-            {navItems.map(({ icon: Icon, label }) => (
-              <a key={label} href="#" className="nav-link text-base" onClick={() => setOpen(false)}>
-                <Icon size={20} strokeWidth={1.5} />
-                {label}
-              </a>
-            ))}
-          </nav>
-          <a href="#" className="btn-secondary text-center mt-6 rounded-full text-xs py-3 block">
-            ORDER ONLINE
-          </a>
+      <div
+        className={`fixed inset-0 z-40 bg-background pt-20 px-6 overflow-y-auto md:hidden transition-all duration-300 ease-in-out ${
+          open ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-4 pointer-events-none"
+        }`}
+      >
+        <div className="flex flex-col items-center mb-6">
+          <img src={fatboyLogo} alt="Fatboy Fried Rice" className="h-24 w-auto mb-2" />
         </div>
-      )}
+        <nav className="flex flex-col gap-1">
+          {navItems.map(({ icon: Icon, label }, i) => (
+            <a
+              key={label}
+              href="#"
+              className={`nav-link text-base transition-all duration-300 ${
+                open ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
+              }`}
+              style={{ transitionDelay: open ? `${i * 50}ms` : "0ms" }}
+              onClick={() => setOpen(false)}
+            >
+              <Icon size={20} strokeWidth={1.5} />
+              {label}
+            </a>
+          ))}
+        </nav>
+        <a
+          href="#"
+          className={`btn-secondary text-center mt-6 rounded-full text-xs py-3 block transition-all duration-300 ${
+            open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+          }`}
+          style={{ transitionDelay: open ? `${navItems.length * 50 + 50}ms` : "0ms" }}
+        >
+          ORDER ONLINE
+        </a>
+      </div>
     </>
   );
 };
