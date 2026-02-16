@@ -17,18 +17,18 @@ const Sidebar = () => {
   return (
     <>
       {/* Mobile top bar */}
-      <div className="fixed top-0 left-0 right-0 z-50 bg-primary flex items-center justify-between px-4 py-2 md:hidden">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-background flex items-center justify-between px-4 py-2 md:hidden border-b border-border">
         <img src={fatboyLogo} alt="Fatboy Fried Rice" className="h-12 w-auto" />
-        <button onClick={() => setOpen(!open)} className="text-primary-foreground">
+        <button onClick={() => setOpen(!open)} className="text-primary">
           {open ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
       {/* Desktop Sidebar */}
-      <aside className="fixed left-0 top-0 h-full w-[220px] bg-primary z-50 flex-col px-5 py-6 overflow-y-auto hidden md:flex">
+      <aside className="fixed left-0 top-0 h-full w-[220px] bg-background z-50 flex-col px-5 py-6 overflow-y-auto hidden md:flex border-r border-border">
         <div className="flex flex-col items-center mb-6">
           <img src={fatboyLogo} alt="Fatboy Fried Rice" className="h-32 w-auto mb-2" />
-          <h2 className="text-primary-foreground text-xl font-bold text-center leading-tight" style={{ fontFamily: 'var(--font-display)' }}>
+          <h2 className="text-primary text-xl font-bold text-center leading-tight" style={{ fontFamily: 'var(--font-display)' }}>
             FATBOY<br />FRIED RICE
           </h2>
         </div>
@@ -48,7 +48,7 @@ const Sidebar = () => {
 
       {/* Mobile nav overlay */}
       {open && (
-        <div className="fixed inset-0 z-40 bg-primary pt-20 px-6 overflow-y-auto md:hidden">
+        <div className="fixed inset-0 z-40 bg-background pt-20 px-6 overflow-y-auto md:hidden">
           <div className="flex flex-col items-center mb-6">
             <img src={fatboyLogo} alt="Fatboy Fried Rice" className="h-24 w-auto mb-2" />
           </div>
