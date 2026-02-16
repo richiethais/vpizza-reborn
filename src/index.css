@@ -1,4 +1,5 @@
 @import url('https://fonts.cdnfonts.com/css/gang-of-three');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,38 +7,47 @@
 
 @layer base {
   :root {
-    --background: 30 33% 95%;
-    --foreground: 0 0% 15%;
-    --card: 30 33% 97%;
-    --card-foreground: 0 0% 15%;
-    --popover: 30 33% 97%;
-    --popover-foreground: 0 0% 15%;
-    --primary: 352 72% 42%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 168 100% 22%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 30 20% 90%;
-    --muted-foreground: 0 0% 40%;
-    --accent: 168 100% 22%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 30 15% 85%;
-    --input: 30 15% 85%;
-    --ring: 352 72% 42%;
-    --radius: 0rem;
-    --sidebar-background: 30 33% 95%;
-    --sidebar-foreground: 0 0% 15%;
-    --sidebar-primary: 352 72% 42%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 168 100% 22%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 30 15% 85%;
-    --sidebar-ring: 352 72% 42%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 8%;
 
-    --font-display: 'Gang of Three', 'Oswald', sans-serif;
-    --font-serif: 'Playfair Display', serif;
-    --font-body: 'Libre Baskerville', serif;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+
+    --primary: 0 85% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 45 100% 50%;
+    --secondary-foreground: 0 0% 8%;
+
+    --muted: 0 0% 93%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 220 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 0 85% 50%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 85% 50%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 0 85% 50%;
+    --sidebar-accent: 0 70% 42%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 70% 42%;
+    --sidebar-ring: 45 100% 50%;
+
+    --font-display: 'Gang of Three', sans-serif;
+    --font-body: 'Inter', sans-serif;
   }
 }
 
@@ -52,39 +62,50 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.03em;
   }
 }
 
 @layer components {
   .nav-link {
-    @apply text-secondary font-semibold text-sm tracking-widest uppercase flex items-center gap-3 py-1.5 hover:opacity-70 transition-opacity;
+    @apply text-sidebar-foreground/90 font-semibold text-sm tracking-wider uppercase flex items-center gap-3 py-2 px-2 rounded hover:bg-sidebar-accent transition-colors;
     font-family: var(--font-display);
   }
+
   .section-heading {
     @apply text-primary text-3xl md:text-4xl font-bold tracking-wide;
     font-family: var(--font-display);
   }
+
   .btn-primary {
-    @apply bg-primary text-primary-foreground px-8 py-3 font-semibold text-sm tracking-widest uppercase hover:opacity-90 transition-opacity;
+    @apply bg-primary text-primary-foreground px-8 py-3 font-bold text-sm tracking-widest uppercase hover:brightness-110 transition-all;
     font-family: var(--font-display);
   }
+
   .btn-secondary {
-    @apply bg-secondary text-secondary-foreground px-8 py-3 font-semibold text-sm tracking-widest uppercase hover:opacity-90 transition-opacity;
+    @apply bg-secondary text-secondary-foreground px-8 py-3 font-bold text-sm tracking-widest uppercase hover:brightness-110 transition-all;
     font-family: var(--font-display);
   }
+
   .btn-outline {
-    @apply border-2 border-secondary text-secondary px-8 py-3 font-semibold text-sm tracking-widest uppercase hover:bg-secondary hover:text-secondary-foreground transition-all;
+    @apply border-2 border-primary text-primary px-8 py-3 font-bold text-sm tracking-widest uppercase hover:bg-primary hover:text-primary-foreground transition-all;
     font-family: var(--font-display);
   }
+
+  .btn-outline-light {
+    @apply border-2 border-primary-foreground text-primary-foreground px-8 py-3 font-bold text-sm tracking-widest uppercase hover:bg-primary-foreground hover:text-primary transition-all;
+    font-family: var(--font-display);
+  }
+
   .hero-title {
     font-family: var(--font-display);
-    @apply text-5xl sm:text-7xl md:text-[10rem] font-bold text-primary-foreground leading-none tracking-wide;
-    text-shadow: 2px 4px 12px rgba(0,0,0,0.4);
+    @apply text-5xl sm:text-7xl md:text-[8rem] font-bold text-primary-foreground leading-none;
+    text-shadow: 3px 5px 0px rgba(0,0,0,0.3);
   }
+
   .hero-subtitle {
-    font-family: var(--font-serif);
-    @apply text-primary-foreground text-lg md:text-2xl italic;
-    text-shadow: 1px 2px 6px rgba(0,0,0,0.5);
+    font-family: var(--font-body);
+    @apply text-primary-foreground text-lg md:text-2xl font-bold tracking-wider uppercase;
+    text-shadow: 1px 2px 4px rgba(0,0,0,0.4);
   }
 }
