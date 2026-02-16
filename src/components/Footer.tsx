@@ -6,9 +6,9 @@ const footerLinks = [
 
 const Footer = () => {
   return (
-    <footer className="bg-primary py-12 px-8">
+    <footer className="bg-primary py-10 md:py-12 px-4 md:px-8">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-start justify-between gap-8">
-        <div className="flex gap-16">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 md:gap-16">
           {footerLinks.map((col, i) => (
             <div key={i} className="flex flex-col gap-2">
               {col.map((link) => (

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Oswald:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.cdnfonts.com/css/gang-of-three');
 
 @tailwind base;
 @tailwind components;
@@ -8,34 +8,24 @@
   :root {
     --background: 30 33% 95%;
     --foreground: 0 0% 15%;
-
     --card: 30 33% 97%;
     --card-foreground: 0 0% 15%;
-
     --popover: 30 33% 97%;
     --popover-foreground: 0 0% 15%;
-
     --primary: 352 72% 42%;
     --primary-foreground: 0 0% 100%;
-
     --secondary: 168 100% 22%;
     --secondary-foreground: 0 0% 100%;
-
     --muted: 30 20% 90%;
     --muted-foreground: 0 0% 40%;
-
     --accent: 168 100% 22%;
     --accent-foreground: 0 0% 100%;
-
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 30 15% 85%;
     --input: 30 15% 85%;
     --ring: 352 72% 42%;
-
     --radius: 0rem;
-
     --sidebar-background: 30 33% 95%;
     --sidebar-foreground: 0 0% 15%;
     --sidebar-primary: 352 72% 42%;
@@ -45,7 +35,7 @@
     --sidebar-border: 30 15% 85%;
     --sidebar-ring: 352 72% 42%;
 
-    --font-display: 'Oswald', sans-serif;
+    --font-display: 'Gang of Three', 'Oswald', sans-serif;
     --font-serif: 'Playfair Display', serif;
     --font-body: 'Libre Baskerville', serif;
   }
@@ -55,12 +45,10 @@
   * {
     @apply border-border;
   }
-
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
   }
-
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     text-transform: uppercase;
@@ -73,36 +61,30 @@
     @apply text-secondary font-semibold text-sm tracking-widest uppercase flex items-center gap-3 py-1.5 hover:opacity-70 transition-opacity;
     font-family: var(--font-display);
   }
-
   .section-heading {
     @apply text-primary text-3xl md:text-4xl font-bold tracking-wide;
     font-family: var(--font-display);
   }
-
   .btn-primary {
     @apply bg-primary text-primary-foreground px-8 py-3 font-semibold text-sm tracking-widest uppercase hover:opacity-90 transition-opacity;
     font-family: var(--font-display);
   }
-
   .btn-secondary {
     @apply bg-secondary text-secondary-foreground px-8 py-3 font-semibold text-sm tracking-widest uppercase hover:opacity-90 transition-opacity;
     font-family: var(--font-display);
   }
-
   .btn-outline {
     @apply border-2 border-secondary text-secondary px-8 py-3 font-semibold text-sm tracking-widest uppercase hover:bg-secondary hover:text-secondary-foreground transition-all;
     font-family: var(--font-display);
   }
-
   .hero-title {
-    font-family: var(--font-serif);
-    @apply text-7xl md:text-[10rem] font-bold text-white leading-none tracking-wide;
+    font-family: var(--font-display);
+    @apply text-5xl sm:text-7xl md:text-[10rem] font-bold text-primary-foreground leading-none tracking-wide;
     text-shadow: 2px 4px 12px rgba(0,0,0,0.4);
   }
-
   .hero-subtitle {
     font-family: var(--font-serif);
-    @apply text-white text-xl md:text-2xl italic;
+    @apply text-primary-foreground text-lg md:text-2xl italic;
     text-shadow: 1px 2px 6px rgba(0,0,0,0.5);
   }
 }
