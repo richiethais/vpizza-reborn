@@ -1,7 +1,9 @@
+import fatboyLogo from "@/assets/fatboy-logo.webp";
+
 const footerLinks = [
-  ["Our Story", "V for Victory", "Gift Cards", "Food Guide"],
-  ["Order Online", "Menu", "Events", "Locations"],
-  ["Contact", "Catering", "Sitemap", "Jobs"],
+  ["Our Story", "Menu", "Gift Cards"],
+  ["Order Online", "Events", "Locations"],
+  ["Contact", "Catering", "Jobs"],
 ];
 
 const Footer = () => {
@@ -12,7 +14,7 @@ const Footer = () => {
           {footerLinks.map((col, i) => (
             <div key={i} className="flex flex-col gap-2">
               {col.map((link) => (
-                <a key={link} href="#" className="text-primary-foreground/80 hover:text-primary-foreground text-sm font-body transition-colors">
+                <a key={link} href="#" className="text-primary-foreground/80 hover:text-primary-foreground text-sm transition-colors">
                   {link}
                 </a>
               ))}
@@ -20,8 +22,12 @@ const Footer = () => {
           ))}
         </div>
         <div className="flex flex-col items-center">
-          <span className="text-primary-foreground font-serif text-6xl font-bold">V</span>
+          <img src={fatboyLogo} alt="Fatboy Fried Rice" className="h-24 w-auto" />
+          <p className="text-primary-foreground text-lg font-bold mt-2" style={{ fontFamily: 'var(--font-display)' }}>FATBOY FRIED RICE</p>
         </div>
+      </div>
+      <div className="max-w-5xl mx-auto mt-8 pt-6 border-t border-primary-foreground/20 text-center">
+        <p className="text-primary-foreground/60 text-xs">© 2025 Fatboy Fried Rice. All rights reserved.</p>
       </div>
     </footer>
   );

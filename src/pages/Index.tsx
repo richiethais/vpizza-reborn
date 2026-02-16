@@ -11,7 +11,7 @@ const Index = () => {
   return (
     <div className="flex min-h-screen">
       <Sidebar />
-      <main className="md:ml-[210px] flex-1 mt-[60px] md:mt-0">
+      <main className="md:ml-[220px] flex-1 mt-[56px] md:mt-0">
         <HeroSection />
         <ShipSection />
         <AboutSection />
