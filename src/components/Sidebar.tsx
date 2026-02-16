@@ -28,9 +28,6 @@ const Sidebar = () => {
       <aside className="fixed left-0 top-0 h-full w-[220px] bg-background z-50 flex-col px-5 py-6 overflow-y-auto hidden md:flex border-r border-border">
         <div className="flex flex-col items-center mb-6">
           <img src={fatboyLogo} alt="Fatboy Fried Rice" className="h-32 w-auto mb-2" />
-          <h2 className="text-primary text-xl font-bold text-center leading-tight" style={{ fontFamily: 'var(--font-display)' }}>
-            FATBOY<br />FRIED RICE
-          </h2>
         </div>
         <nav className="flex flex-col gap-0.5 flex-1">
           {navItems.map(({ icon: Icon, label }) => (
