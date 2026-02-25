@@ -7,7 +7,7 @@ const HeroSection = () => {
       <img
         src={heroImage}
         alt="Delicious fried rice"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover object-center"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/10" />
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 md:px-8">
