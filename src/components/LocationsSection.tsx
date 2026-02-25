@@ -1,14 +1,4 @@
-import { useState } from "react";
-
 const LocationsSection = () => {
-  const [activeLocation, setActiveLocation] = useState<"both" | "southside" | "westside">("both");
-
-  const mapUrls = {
-    both: "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d110579!2d-81.65!3d30.30!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s11450+Beach+Blvd%2C+Jacksonville%2C+FL!3m2!1d30.2843!2d-81.5461!4m5!1s1429+Cassat+Ave%2C+Jacksonville%2C+FL!3m2!1d30.3134!2d-81.7345!5e0!3m2!1sen!2sus",
-    southside: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5000!2d-81.5461!3d30.2843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s11450+Beach+Blvd%2C+Jacksonville%2C+FL!2s!5e0!3m2!1sen!2sus",
-    westside: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5000!2d-81.7345!3d30.3134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s1429+Cassat+Ave%2C+Jacksonville%2C+FL!2s!5e0!3m2!1sen!2sus",
-  };
-
   return (
     <section id="locations" className="bg-muted py-10 md:py-12 px-4 md:px-8">
       <div className="max-w-5xl mx-auto">
@@ -18,69 +8,45 @@ const LocationsSection = () => {
           </h2>
         </div>
 
-        {/* Location cards - click to focus map */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-          <button
-            onClick={() => setActiveLocation(activeLocation === "southside" ? "both" : "southside")}
-            className={`text-left bg-background border-2 rounded-xl p-5 transition-colors group ${
-              activeLocation === "southside" ? "border-primary ring-2 ring-primary/30" : "border-primary/20 hover:border-primary"
-            }`}
-          >
-            <p className="text-primary font-bold tracking-wide text-sm mb-1" style={{ fontFamily: 'var(--font-display)' }}>
-              📍 SOUTHSIDE
-            </p>
-            <p className="text-muted-foreground text-sm">11450 Beach Blvd, Jacksonville, FL</p>
-            <div className="flex items-center justify-between mt-2">
-              <span className="text-primary text-xs">{activeLocation === "southside" ? "✓ Viewing on map" : "Click to view on map"}</span>
-              <a
-                href="https://maps.google.com/?q=11450+Beach+Blvd+Jacksonville+FL"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="text-primary text-xs hover:underline"
-              >
-                Get Directions →
-              </a>
-            </div>
-          </button>
-          <button
-            onClick={() => setActiveLocation(activeLocation === "westside" ? "both" : "westside")}
-            className={`text-left bg-background border-2 rounded-xl p-5 transition-colors group ${
-              activeLocation === "westside" ? "border-primary ring-2 ring-primary/30" : "border-primary/20 hover:border-primary"
-            }`}
-          >
-            <p className="text-primary font-bold tracking-wide text-sm mb-1" style={{ fontFamily: 'var(--font-display)' }}>
-              📍 WESTSIDE
-            </p>
-            <p className="text-muted-foreground text-sm">1429 Cassat Ave, Jacksonville, FL</p>
-            <div className="flex items-center justify-between mt-2">
-              <span className="text-primary text-xs">{activeLocation === "westside" ? "✓ Viewing on map" : "Click to view on map"}</span>
-              <a
-                href="https://maps.google.com/?q=1429+Cassat+Ave+Jacksonville+FL"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-                className="text-primary text-xs hover:underline"
-              >
-                Get Directions →
-              </a>
-            </div>
-          </button>
+        {/* Static map image with both markers */}
+        <div className="w-full rounded overflow-hidden border-2 border-primary/20 mb-6">
+          <img
+            src="https://maps.googleapis.com/maps/api/staticmap?size=1200x500&maptype=roadmap&markers=color:red%7Clabel:1%7C30.2843,-81.5461&markers=color:red%7Clabel:2%7C30.3134,-81.7345&zoom=11&center=30.30,-81.65&scale=2&style=feature:all%7Celement:geometry%7Ccolor:0xf5f5f5&key="
+            alt="Map showing both Fatboy Fried Rice locations in Jacksonville, FL"
+            className="w-full h-[280px] md:h-[400px] object-cover bg-muted"
+            onError={(e) => {
+              // Fallback to OpenStreetMap static image if Google fails
+              (e.target as HTMLImageElement).src = `https://staticmap.openstreetmap.de/staticmap.php?center=30.30,-81.65&zoom=11&size=1200x500&markers=30.2843,-81.5461,ol-marker|30.3134,-81.7345,ol-marker`;
+            }}
+          />
         </div>
 
-        {/* Interactive Google Map */}
-        <div className="w-full rounded overflow-hidden border-2 border-primary/20">
-          <iframe
-            src={mapUrls[activeLocation]}
-            width="100%"
-            height="400"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            title="Fatboy Fried Rice Locations"
-            className="w-full h-[280px] md:h-[400px]"
-          />
+        {/* Location cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <a
+            href="https://maps.apple.com/?address=11450+Beach+Blvd,+Jacksonville,+FL"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-background border-2 border-primary/20 rounded-xl p-5 hover:border-primary transition-colors group"
+          >
+            <p className="text-primary font-bold tracking-wide text-sm mb-1" style={{ fontFamily: 'var(--font-display)' }}>
+              📍 SOUTHSIDE — Fatboy Fried Rice
+            </p>
+            <p className="text-muted-foreground text-sm">11450 Beach Blvd, Jacksonville, FL</p>
+            <p className="text-primary text-xs mt-2 group-hover:underline">Get Directions →</p>
+          </a>
+          <a
+            href="https://maps.apple.com/?address=1429+Cassat+Ave,+Jacksonville,+FL"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-background border-2 border-primary/20 rounded-xl p-5 hover:border-primary transition-colors group"
+          >
+            <p className="text-primary font-bold tracking-wide text-sm mb-1" style={{ fontFamily: 'var(--font-display)' }}>
+              📍 WESTSIDE — Fatboy Fried Rice 2
+            </p>
+            <p className="text-muted-foreground text-sm">1429 Cassat Ave, Jacksonville, FL</p>
+            <p className="text-primary text-xs mt-2 group-hover:underline">Get Directions →</p>
+          </a>
         </div>
       </div>
     </section>
