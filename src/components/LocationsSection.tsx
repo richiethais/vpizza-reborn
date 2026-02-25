@@ -8,16 +8,16 @@ const LocationsSection = () => {
           </h2>
         </div>
 
-        {/* Static map image with both markers */}
+        {/* OpenStreetMap embed with both locations */}
         <div className="w-full rounded overflow-hidden border-2 border-primary/20 mb-6">
-          <img
-            src="https://maps.googleapis.com/maps/api/staticmap?size=1200x500&maptype=roadmap&markers=color:red%7Clabel:1%7C30.2843,-81.5461&markers=color:red%7Clabel:2%7C30.3134,-81.7345&zoom=11&center=30.30,-81.65&scale=2&style=feature:all%7Celement:geometry%7Ccolor:0xf5f5f5&key="
-            alt="Map showing both Fatboy Fried Rice locations in Jacksonville, FL"
-            className="w-full h-[280px] md:h-[400px] object-cover bg-muted"
-            onError={(e) => {
-              // Fallback to OpenStreetMap static image if Google fails
-              (e.target as HTMLImageElement).src = `https://staticmap.openstreetmap.de/staticmap.php?center=30.30,-81.65&zoom=11&size=1200x500&markers=30.2843,-81.5461,ol-marker|30.3134,-81.7345,ol-marker`;
-            }}
+          <iframe
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-81.80%2C30.24%2C-81.48%2C30.36&layer=mapnik&marker=30.2843%2C-81.5461"
+            width="100%"
+            height="400"
+            style={{ border: 0 }}
+            loading="lazy"
+            title="Fatboy Fried Rice Locations"
+            className="w-full h-[280px] md:h-[400px]"
           />
         </div>
 
