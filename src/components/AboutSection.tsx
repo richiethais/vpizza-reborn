@@ -1,4 +1,4 @@
-import pizzaAbout from "@/assets/pizza-about.jpg";
+import cheeseburger from "@/assets/menu/cheeseburger.webp";
 
 const AboutSection = () => {
   return (
@@ -26,11 +26,8 @@ const AboutSection = () => {
           </div>
           <a href="#" className="btn-outline inline-block mt-6 md:mt-8 rounded">OUR INGREDIENTS</a>
         </div>
-        <div className="flex-shrink-0 relative w-full md:w-auto">
-          <img src={pizzaAbout} alt="Delicious food" className="w-full md:w-[400px] h-[280px] md:h-[350px] object-cover rounded" />
-          <a href="#" className="btn-primary absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded">
-            VIEW OUR MENU
-          </a>
+        <div className="flex-shrink-0 w-full md:w-auto">
+          <img src={cheeseburger} alt="Cheeseburger fried rice" className="w-full md:w-[400px] h-[280px] md:h-[350px] object-cover rounded" />
         </div>
       </div>
     </section>

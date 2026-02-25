@@ -1,11 +1,11 @@
-import pizzaStone from "@/assets/pizza-stone.jpg";
+import beefShortRibs from "@/assets/menu/beef-short-ribs.webp";
 
 const PizzaStonesSection = () => {
   return (
     <section className="bg-background py-12 md:py-16 px-4 md:px-8">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-8 md:gap-12 items-center">
         <div className="flex-shrink-0 w-full md:w-auto">
-          <img src={pizzaStone} alt="Food close-up" className="w-full md:w-[350px] h-[250px] md:h-[300px] object-cover rounded" />
+          <img src={beefShortRibs} alt="Beef short ribs fried rice" className="w-full md:w-[350px] h-[250px] md:h-[300px] object-cover rounded" />
         </div>
         <div className="flex-1">
           <h2 className="text-primary text-2xl md:text-4xl font-bold mb-4 leading-tight" style={{ fontFamily: 'var(--font-display)' }}>
