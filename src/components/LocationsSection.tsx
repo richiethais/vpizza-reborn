@@ -4,9 +4,9 @@ const LocationsSection = () => {
   const [activeLocation, setActiveLocation] = useState<"both" | "southside" | "westside">("both");
 
   const mapUrls = {
-    both: "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d110579.06!2d-81.72!3d30.30!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sFatboy+Fried+Rice+Jacksonville+FL!5e0!3m2!1sen!2sus",
-    southside: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d-81.5461!3d30.2843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1sFatboy+Fried+Rice+Beach+Blvd!2sJacksonville+FL!5e0!3m2!1sen!2sus",
-    westside: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d-81.7345!3d30.3134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1sFatboy+Fried+Rice+Cassat+Ave!2sJacksonville+FL!5e0!3m2!1sen!2sus",
+    both: "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d110579.06!2d-81.65!3d30.30!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s11450+Beach+Blvd+Jacksonville+FL+%7C+1429+Cassat+Ave+Jacksonville+FL!5e0!3m2!1sen!2sus",
+    southside: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d-81.5461!3d30.2843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s11450+Beach+Blvd+Jacksonville+FL!2s!5e0!3m2!1sen!2sus",
+    westside: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d-81.7345!3d30.3134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s1429+Cassat+Ave+Jacksonville+FL!2s!5e0!3m2!1sen!2sus",
   };
 
   return (
@@ -29,11 +29,11 @@ const LocationsSection = () => {
             <p className="text-primary font-bold tracking-wide text-sm mb-1" style={{ fontFamily: 'var(--font-display)' }}>
               📍 SOUTHSIDE
             </p>
-            <p className="text-muted-foreground text-sm">Beach Blvd, Jacksonville, FL</p>
+            <p className="text-muted-foreground text-sm">11450 Beach Blvd, Jacksonville, FL</p>
             <div className="flex items-center justify-between mt-2">
               <span className="text-primary text-xs">{activeLocation === "southside" ? "✓ Viewing on map" : "Click to view on map"}</span>
               <a
-                href="https://maps.google.com/?q=Fatboy+Fried+Rice+Beach+Blvd+Jacksonville+FL"
+                href="https://maps.google.com/?q=11450+Beach+Blvd+Jacksonville+FL"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
@@ -52,11 +52,11 @@ const LocationsSection = () => {
             <p className="text-primary font-bold tracking-wide text-sm mb-1" style={{ fontFamily: 'var(--font-display)' }}>
               📍 WESTSIDE
             </p>
-            <p className="text-muted-foreground text-sm">Cassat Ave, Jacksonville, FL</p>
+            <p className="text-muted-foreground text-sm">1429 Cassat Ave, Jacksonville, FL</p>
             <div className="flex items-center justify-between mt-2">
               <span className="text-primary text-xs">{activeLocation === "westside" ? "✓ Viewing on map" : "Click to view on map"}</span>
               <a
-                href="https://maps.google.com/?q=Fatboy+Fried+Rice+Cassat+Ave+Jacksonville+FL"
+                href="https://maps.google.com/?q=1429+Cassat+Ave+Jacksonville+FL"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
