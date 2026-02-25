@@ -44,6 +44,11 @@ const Contact = () => {
       return;
     }
 
+    // Send email notification to admin (fire and forget)
+    supabase.functions.invoke("notify-contact", {
+      body: { name: trimmedName, email: trimmedEmail, message: trimmedMessage },
+    }).catch(() => {}); // Don't block on email failure
+
     setSubmitted(true);
     setName("");
     setEmail("");
