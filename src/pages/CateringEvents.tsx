@@ -82,7 +82,7 @@ const CateringEvents = () => {
               <a
                 href="mailto:FATBOYFRIEDRICE@GMAIL.COM"
                 className="bg-primary text-primary-foreground inline-block rounded-full text-sm md:text-base px-8 py-3 font-bold tracking-wider hover:opacity-90 transition-opacity"
-                style={{ fontFamily: "var(--font-display)" }}
+                style={{ fontFamily: "'Times New Roman', Times, serif" }}
               >
                 FATBOYFRIEDRICE@GMAIL.COM
               </a>
