@@ -29,9 +29,8 @@ const LocationsSection = () => {
         {/* Interactive Google Map */}
         <div className="w-full rounded overflow-hidden border-2 border-primary/20 mb-6">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d110000!2d-81.65!3d30.30!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x88e5ca1b2bf809a1%3A0x9a5a28a667891ab0!2sFatboy%20Fried%20Rice%20Beach%20Blvd%20Jacksonville%20FL!3m2!1d30.2843!2d-81.5461!4m5!1s0x88e5b87ed5e42c21%3A0xb2f40c2c5f3b15e0!2sFatboy%20Fried%20Rice%20Cassat%20Ave%20Jacksonville%20FL!3m2!1d30.3134!2d-81.7345!5e0!3m2!1sen!2sus"
+            src="https://www.google.com/maps/dir/Fatboy+Fried+Rice,+Beach+Blvd,+Jacksonville,+FL/Fatboy+Fried+Rice,+Cassat+Ave,+Jacksonville,+FL/@30.3,-81.64,12z/data=!3m1!4b1?entry=embed"
             width="100%"
-            height="400"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
