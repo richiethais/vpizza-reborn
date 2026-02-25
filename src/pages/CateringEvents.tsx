@@ -84,7 +84,7 @@ const CateringEvents = () => {
                 className="bg-primary text-primary-foreground inline-block rounded-full text-sm md:text-base px-8 py-3 font-bold tracking-wider hover:opacity-90 transition-opacity"
                 style={{ fontFamily: "'Times New Roman', Times, serif" }}
               >
-                FATBOYFRIEDRICE@GMAIL.COM
+                <strong>FATBOYFRIEDRICE@GMAIL.COM</strong>
               </a>
             </div>
           </div>
