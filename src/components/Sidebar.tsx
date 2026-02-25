@@ -9,7 +9,7 @@ const navItems = [
   { icon: UtensilsCrossed, label: "MENU", href: "#" },
   { icon: Calendar, label: "CATERING & EVENTS", href: "/catering-events" },
   { icon: BookOpen, label: "OUR STORY", href: "#" },
-  { icon: MapPin, label: "LOCATIONS", href: "/#locations" },
+  { icon: MapPin, label: "LOCATIONS", href: "#" },
   { icon: Phone, label: "CONTACT", href: "/contact" },
 ];
 
@@ -53,16 +53,7 @@ const Sidebar = () => {
               onClick={(e) => {
                 if (href.startsWith("/")) {
                   e.preventDefault();
-                  if (href.includes("#")) {
-                    const [path, hash] = href.split("#");
-                    if (location.pathname === path || (path === "/" && location.pathname === "/")) {
-                      document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
-                    } else {
-                      navigate(href);
-                    }
-                  } else {
-                    navigate(href);
-                  }
+                  navigate(href);
                 }
               }}
               className={`nav-link text-sm py-2 px-2 ${
@@ -101,16 +92,7 @@ const Sidebar = () => {
               onClick={(e) => {
                 if (href.startsWith("/")) {
                   e.preventDefault();
-                  if (href.includes("#")) {
-                    const [path, hash] = href.split("#");
-                    if (location.pathname === path || (path === "/" && location.pathname === "/")) {
-                      document.getElementById(hash)?.scrollIntoView({ behavior: "smooth" });
-                    } else {
-                      navigate(href);
-                    }
-                  } else {
-                    navigate(href);
-                  }
+                  navigate(href);
                 }
                 setOpen(false);
               }}
