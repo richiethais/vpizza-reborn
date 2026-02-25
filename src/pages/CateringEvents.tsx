@@ -10,8 +10,8 @@ const CateringEvents = () => {
       <Sidebar />
       <main className="md:ml-[220px] flex-1 mt-[56px] md:mt-0">
         {/* Hero banner */}
-        <section className="py-6 md:py-10 px-4 text-center" style={{ backgroundColor: "hsl(0, 60%, 30%)" }}>
-          <img src={fatboyLogo} alt="Fatboy Fried Rice" className="h-16 md:h-20 w-auto mx-auto mb-3" />
+        <section className="bg-primary py-12 md:py-20 px-4 text-center">
+          <img src={fatboyLogo} alt="Fatboy Fried Rice" className="h-24 md:h-32 w-auto mx-auto mb-4" />
           <h1
             className="text-primary-foreground text-4xl md:text-6xl font-bold tracking-wide mb-3"
             style={{ fontFamily: "var(--font-display)" }}
