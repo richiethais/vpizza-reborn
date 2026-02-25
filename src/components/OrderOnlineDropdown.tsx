@@ -3,8 +3,8 @@ import { MapPin, X } from "lucide-react";
 import fatboyLogo from "@/assets/fatboy-logo-new.png";
 
 const locations = [
-  { name: "Beach Boulevard", url: "https://order.toasttab.com/online/fatboy-fried-rice-beach-blvd" },
-  { name: "Westside / Cassat", url: "https://order.toasttab.com/online/fatboy-fried-rice-cassat" },
+  { name: "Beach Boulevard", url: "https://order.getrevi.com/fatboy-fried-rice-beach-blvd-1733" },
+  { name: "Westside / Cassat", url: "https://order.getrevi.com/fatboy-fried-rice-westside-1769" },
 ];
 
 interface Props {
