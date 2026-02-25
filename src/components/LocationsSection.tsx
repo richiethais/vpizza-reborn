@@ -4,9 +4,9 @@ const LocationsSection = () => {
   const [activeLocation, setActiveLocation] = useState<"both" | "southside" | "westside">("both");
 
   const mapUrls = {
-    both: "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d110579.06!2d-81.65!3d30.30!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s11450+Beach+Blvd+Jacksonville+FL+%7C+1429+Cassat+Ave+Jacksonville+FL!5e0!3m2!1sen!2sus",
-    southside: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d-81.5461!3d30.2843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s11450+Beach+Blvd+Jacksonville+FL!2s!5e0!3m2!1sen!2sus",
-    westside: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d-81.7345!3d30.3134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s1429+Cassat+Ave+Jacksonville+FL!2s!5e0!3m2!1sen!2sus",
+    both: "https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d110579!2d-81.65!3d30.30!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s11450+Beach+Blvd%2C+Jacksonville%2C+FL!3m2!1d30.2843!2d-81.5461!4m5!1s1429+Cassat+Ave%2C+Jacksonville%2C+FL!3m2!1d30.3134!2d-81.7345!5e0!3m2!1sen!2sus",
+    southside: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5000!2d-81.5461!3d30.2843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s11450+Beach+Blvd%2C+Jacksonville%2C+FL!2s!5e0!3m2!1sen!2sus",
+    westside: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5000!2d-81.7345!3d30.3134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s1429+Cassat+Ave%2C+Jacksonville%2C+FL!2s!5e0!3m2!1sen!2sus",
   };
 
   return (
