@@ -11,6 +11,7 @@ interface EventRow {
   title: string;
   description: string | null;
   event_date: string | null;
+  event_end_date: string | null;
   location: string | null;
   event_type: string;
   is_active: boolean;
@@ -69,7 +70,7 @@ const CateringEvents = () => {
                         <p className="text-primary font-bold tracking-wide" style={{ fontFamily: "var(--font-display)" }}>{ev.title}</p>
                         {ev.description && <p className="text-muted-foreground text-sm mt-1">{ev.description}</p>}
                         <div className="flex gap-3 mt-2 text-xs text-muted-foreground">
-                          {ev.event_date && <span>📅 {new Date(ev.event_date).toLocaleDateString()}</span>}
+                          {ev.event_date && <span>📅 {new Date(ev.event_date).toLocaleDateString()}{ev.event_end_date ? ` – ${new Date(ev.event_end_date).toLocaleDateString()}` : ""}</span>}
                           {ev.location && <span className="flex items-center gap-1"><MapPin size={12} /> {ev.location}</span>}
                         </div>
                       </div>

@@ -11,6 +11,7 @@ interface EventRow {
   title: string;
   description: string | null;
   event_date: string | null;
+  event_end_date: string | null;
   location: string | null;
   event_type: string;
   is_active: boolean;
@@ -37,7 +38,7 @@ const Admin = () => {
   const [events, setEvents] = useState<EventRow[]>([]);
   const [contacts, setContacts] = useState<ContactRow[]>([]);
   const [showForm, setShowForm] = useState(false);
-  const [newEvent, setNewEvent] = useState({ title: "", description: "", event_date: "", location: "", event_type: "event" as EventType });
+  const [newEvent, setNewEvent] = useState({ title: "", description: "", event_date: "", event_end_date: "", location: "", event_type: "event" as EventType });
   const { toast } = useToast();
 
   useEffect(() => {
@@ -105,6 +106,7 @@ const Admin = () => {
       title: newEvent.title.trim(),
       description: newEvent.description.trim() || null,
       event_date: newEvent.event_date || null,
+      event_end_date: newEvent.event_end_date || null,
       location: newEvent.location.trim() || null,
       event_type: newEvent.event_type,
     });
@@ -113,7 +115,7 @@ const Admin = () => {
       return;
     }
     toast({ title: "Event added!" });
-    setNewEvent({ title: "", description: "", event_date: "", location: "", event_type: "event" });
+    setNewEvent({ title: "", description: "", event_date: "", event_end_date: "", location: "", event_type: "event" });
     setShowForm(false);
     fetchEvents();
   };
@@ -205,16 +207,16 @@ const Admin = () => {
       <div className="flex border-b-2 border-primary/20">
         <button
           onClick={() => setTab("events")}
-          className={`flex-1 py-3 text-sm font-bold tracking-wider text-center transition-colors ${tab === "events" ? "bg-primary text-primary-foreground" : "text-primary hover:bg-primary/10"}`}
-          style={{ fontFamily: "var(--font-display)" }}
+          className={`flex-1 py-3 text-sm font-bold tracking-wider text-center transition-colors ${tab === "events" ? "text-primary" : "bg-primary text-primary-foreground"}`}
+          style={{ fontFamily: "var(--font-display)", backgroundColor: tab === "events" ? "#fdf2e9" : undefined }}
         >
           <Calendar size={16} className="inline mr-2" />
           EVENTS
         </button>
         <button
           onClick={() => setTab("contacts")}
-          className={`flex-1 py-3 text-sm font-bold tracking-wider text-center transition-colors relative ${tab === "contacts" ? "bg-primary text-primary-foreground" : "text-primary hover:bg-primary/10"}`}
-          style={{ fontFamily: "var(--font-display)" }}
+          className={`flex-1 py-3 text-sm font-bold tracking-wider text-center transition-colors relative ${tab === "contacts" ? "text-primary" : "bg-primary text-primary-foreground"}`}
+          style={{ fontFamily: "var(--font-display)", backgroundColor: tab === "contacts" ? "#fdf2e9" : undefined }}
         >
           <Mail size={16} className="inline mr-2" />
           MESSAGES
@@ -246,10 +248,14 @@ const Admin = () => {
                   <label className="block text-primary text-xs font-bold tracking-wider mb-1 uppercase" style={{ fontFamily: "var(--font-display)" }}>Description</label>
                   <textarea value={newEvent.description} onChange={(e) => setNewEvent({ ...newEvent, description: e.target.value })} maxLength={1000} rows={3} className="w-full border-2 border-primary/20 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-primary resize-none" />
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-primary text-xs font-bold tracking-wider mb-1 uppercase" style={{ fontFamily: "var(--font-display)" }}>Date</label>
+                    <label className="block text-primary text-xs font-bold tracking-wider mb-1 uppercase" style={{ fontFamily: "var(--font-display)" }}>Start Date</label>
                     <input type="date" value={newEvent.event_date} onChange={(e) => setNewEvent({ ...newEvent, event_date: e.target.value })} className="w-full border-2 border-primary/20 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-primary" />
+                  </div>
+                  <div>
+                    <label className="block text-primary text-xs font-bold tracking-wider mb-1 uppercase" style={{ fontFamily: "var(--font-display)" }}>End Date <span className="font-normal">(optional)</span></label>
+                    <input type="date" value={newEvent.event_end_date} onChange={(e) => setNewEvent({ ...newEvent, event_end_date: e.target.value })} className="w-full border-2 border-primary/20 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-primary" />
                   </div>
                   <div>
                     <label className="block text-primary text-xs font-bold tracking-wider mb-1 uppercase" style={{ fontFamily: "var(--font-display)" }}>Location</label>
@@ -284,7 +290,7 @@ const Admin = () => {
                       <p className="text-primary font-bold text-sm mt-1">{ev.title}</p>
                       {ev.description && <p className="text-muted-foreground text-xs mt-1">{ev.description}</p>}
                       <div className="flex gap-3 mt-1 text-xs text-muted-foreground">
-                        {ev.event_date && <span>📅 {new Date(ev.event_date).toLocaleDateString()}</span>}
+                        {ev.event_date && <span>📅 {new Date(ev.event_date).toLocaleDateString()}{ev.event_end_date ? ` – ${new Date(ev.event_end_date).toLocaleDateString()}` : ""}</span>}
                         {ev.location && <span>📍 {ev.location}</span>}
                       </div>
                     </div>
