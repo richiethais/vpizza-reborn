@@ -1,21 +1,13 @@
+import { useState } from "react";
+
 const LocationsSection = () => {
-  // Both Fatboy Fried Rice locations
-  const locations = [
-    { name: "Southside - Beach Blvd", lat: 30.2843, lng: -81.5461 },
-    { name: "Westside - Cassat Ave", lat: 30.3134, lng: -81.7345 },
-  ];
+  const [activeLocation, setActiveLocation] = useState<"both" | "southside" | "westside">("both");
 
-  // Center point between both locations
-  const centerLat = (locations[0].lat + locations[1].lat) / 2;
-  const centerLng = (locations[0].lng + locations[1].lng) / 2;
-
-  const mapSrc = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110000!2d${centerLng}!3d${centerLat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus`;
-
-  // Use a multi-marker map URL
-  const multiMarkerSrc = `https://www.google.com/maps/embed/v1/search?key=&q=Fatboy+Fried+Rice+Jacksonville+FL`;
-
-  // Simpler approach: embed with directions between the two locations or use place search
-  const embedSrc = `https://www.google.com/maps/d/embed?mid=&z=11`;
+  const mapUrls = {
+    both: "https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d110579.06!2d-81.72!3d30.30!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sFatboy+Fried+Rice+Jacksonville+FL!5e0!3m2!1sen!2sus",
+    southside: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d-81.5461!3d30.2843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1sFatboy+Fried+Rice+Beach+Blvd!2sJacksonville+FL!5e0!3m2!1sen!2sus",
+    westside: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d-81.7345!3d30.3134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1sFatboy+Fried+Rice+Cassat+Ave!2sJacksonville+FL!5e0!3m2!1sen!2sus",
+  };
 
   return (
     <section id="locations" className="bg-muted py-10 md:py-12 px-4 md:px-8">
@@ -26,10 +18,60 @@ const LocationsSection = () => {
           </h2>
         </div>
 
+        {/* Location cards - click to focus map */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          <button
+            onClick={() => setActiveLocation(activeLocation === "southside" ? "both" : "southside")}
+            className={`text-left bg-background border-2 rounded-xl p-5 transition-colors group ${
+              activeLocation === "southside" ? "border-primary ring-2 ring-primary/30" : "border-primary/20 hover:border-primary"
+            }`}
+          >
+            <p className="text-primary font-bold tracking-wide text-sm mb-1" style={{ fontFamily: 'var(--font-display)' }}>
+              📍 SOUTHSIDE
+            </p>
+            <p className="text-muted-foreground text-sm">Beach Blvd, Jacksonville, FL</p>
+            <div className="flex items-center justify-between mt-2">
+              <span className="text-primary text-xs">{activeLocation === "southside" ? "✓ Viewing on map" : "Click to view on map"}</span>
+              <a
+                href="https://maps.google.com/?q=Fatboy+Fried+Rice+Beach+Blvd+Jacksonville+FL"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="text-primary text-xs hover:underline"
+              >
+                Get Directions →
+              </a>
+            </div>
+          </button>
+          <button
+            onClick={() => setActiveLocation(activeLocation === "westside" ? "both" : "westside")}
+            className={`text-left bg-background border-2 rounded-xl p-5 transition-colors group ${
+              activeLocation === "westside" ? "border-primary ring-2 ring-primary/30" : "border-primary/20 hover:border-primary"
+            }`}
+          >
+            <p className="text-primary font-bold tracking-wide text-sm mb-1" style={{ fontFamily: 'var(--font-display)' }}>
+              📍 WESTSIDE
+            </p>
+            <p className="text-muted-foreground text-sm">Cassat Ave, Jacksonville, FL</p>
+            <div className="flex items-center justify-between mt-2">
+              <span className="text-primary text-xs">{activeLocation === "westside" ? "✓ Viewing on map" : "Click to view on map"}</span>
+              <a
+                href="https://maps.google.com/?q=Fatboy+Fried+Rice+Cassat+Ave+Jacksonville+FL"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="text-primary text-xs hover:underline"
+              >
+                Get Directions →
+              </a>
+            </div>
+          </button>
+        </div>
+
         {/* Interactive Google Map */}
-        <div className="w-full rounded overflow-hidden border-2 border-primary/20 mb-6">
+        <div className="w-full rounded overflow-hidden border-2 border-primary/20">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d110579.06!2d-81.72!3d30.30!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sFatboy+Fried+Rice+Jacksonville+FL!5e0!3m2!1sen!2sus"
+            src={mapUrls[activeLocation]}
             width="100%"
             height="400"
             style={{ border: 0 }}
@@ -39,34 +81,6 @@ const LocationsSection = () => {
             title="Fatboy Fried Rice Locations"
             className="w-full h-[280px] md:h-[400px]"
           />
-        </div>
-
-        {/* Location cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <a
-            href="https://maps.google.com/?q=Fatboy+Fried+Rice+Beach+Blvd+Jacksonville+FL"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-background border-2 border-primary/20 rounded-xl p-5 hover:border-primary transition-colors group"
-          >
-            <p className="text-primary font-bold tracking-wide text-sm mb-1" style={{ fontFamily: 'var(--font-display)' }}>
-              📍 SOUTHSIDE
-            </p>
-            <p className="text-muted-foreground text-sm">Beach Blvd, Jacksonville, FL</p>
-            <p className="text-primary text-xs mt-2 group-hover:underline">Get Directions →</p>
-          </a>
-          <a
-            href="https://maps.google.com/?q=Fatboy+Fried+Rice+Cassat+Ave+Jacksonville+FL"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-background border-2 border-primary/20 rounded-xl p-5 hover:border-primary transition-colors group"
-          >
-            <p className="text-primary font-bold tracking-wide text-sm mb-1" style={{ fontFamily: 'var(--font-display)' }}>
-              📍 WESTSIDE
-            </p>
-            <p className="text-muted-foreground text-sm">Cassat Ave, Jacksonville, FL</p>
-            <p className="text-primary text-xs mt-2 group-hover:underline">Get Directions →</p>
-          </a>
         </div>
       </div>
     </section>
