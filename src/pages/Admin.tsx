@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
-import { LogOut, Mail, Calendar, Plus, Trash2, Eye, EyeOff, X } from "lucide-react";
+import { LogOut, Mail, Calendar, Plus, Trash2, Eye, EyeOff, X, Reply } from "lucide-react";
 import type { Session } from "@supabase/supabase-js";
 
 type EventType = "event" | "closure" | "announcement";
@@ -320,7 +320,15 @@ const Admin = () => {
                         </div>
                         <p className="text-muted-foreground text-xs">{c.email}</p>
                         <p className="text-foreground text-sm mt-2">{c.message}</p>
-                        <p className="text-muted-foreground text-xs mt-2">{new Date(c.created_at).toLocaleString()}</p>
+                        <div className="flex items-center gap-3 mt-3">
+                          <a
+                            href={`mailto:${encodeURIComponent(c.email)}?subject=${encodeURIComponent("Re: Your message to Fatboy Fried Rice")}&body=${encodeURIComponent(`Hi ${c.name},\n\nThank you for reaching out!\n\n---\nOriginal message:\n${c.message}`)}`}
+                            className="btn-primary rounded-full text-xs inline-flex items-center gap-1 px-4 py-2"
+                          >
+                            <Reply size={14} /> REPLY
+                          </a>
+                          <p className="text-muted-foreground text-xs">{new Date(c.created_at).toLocaleString()}</p>
+                        </div>
                       </div>
                       <div className="flex items-center gap-1 shrink-0">
                         <button onClick={() => toggleRead(c.id, c.is_read)} className="p-2 text-primary hover:bg-primary/10 rounded-lg" title={c.is_read ? "Mark unread" : "Mark read"}>
