@@ -8,14 +8,16 @@ const LocationsSection = () => {
           </h2>
         </div>
 
-        {/* OpenStreetMap embed with both locations */}
+        {/* Google Map with both locations */}
         <div className="w-full rounded overflow-hidden border-2 border-primary/20 mb-6">
           <iframe
-            src="https://www.openstreetmap.org/export/embed.html?bbox=-81.80%2C30.24%2C-81.48%2C30.36&layer=mapnik&marker=30.2843%2C-81.5461"
+            src="https://maps.google.com/maps?saddr=11450+Beach+Blvd,+Jacksonville,+FL&daddr=1429+Cassat+Ave,+Jacksonville,+FL&output=embed"
             width="100%"
             height="400"
             style={{ border: 0 }}
+            allowFullScreen
             loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
             title="Fatboy Fried Rice Locations"
             className="w-full h-[280px] md:h-[400px]"
           />
