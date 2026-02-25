@@ -1,6 +1,7 @@
 import { UtensilsCrossed, Calendar, BookOpen, Truck, MapPin, Phone, Menu, X, ShoppingCart } from "lucide-react";
 import { useState } from "react";
 import fatboyLogo from "@/assets/fatboy-logo-new.png";
+import OrderOnlineDropdown from "./OrderOnlineDropdown";
 
 const navItems = [
   { icon: UtensilsCrossed, label: "MENU" },
@@ -37,10 +38,10 @@ const Sidebar = () => {
             </a>
           ))}
         </nav>
-        <a href="#" className="btn-secondary text-center mt-4 rounded-full text-xs py-3 flex items-center justify-center gap-2">
+        <OrderOnlineDropdown className="btn-secondary text-center mt-4 rounded-full text-xs py-3 flex items-center justify-center gap-2 w-full">
           <ShoppingCart size={16} />
           ORDER ONLINE
-        </a>
+        </OrderOnlineDropdown>
       </aside>
 
       {/* Mobile nav overlay */}
@@ -68,15 +69,13 @@ const Sidebar = () => {
             </a>
           ))}
         </nav>
-        <a
-          href="#"
-          className={`btn-secondary text-center mt-6 rounded-full text-xs py-3 block transition-all duration-300 ${
+        <OrderOnlineDropdown
+          className={`btn-secondary text-center mt-6 rounded-full text-xs py-3 block w-full transition-all duration-300 ${
             open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
-          style={{ transitionDelay: open ? `${navItems.length * 50 + 50}ms` : "0ms" }}
         >
           ORDER ONLINE
-        </a>
+        </OrderOnlineDropdown>
       </div>
     </>
   );

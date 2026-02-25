@@ -1,4 +1,5 @@
 import heroImage from "@/assets/hero-fried-rice.jpg";
+import OrderOnlineDropdown from "./OrderOnlineDropdown";
 
 const HeroSection = () => {
   return (
@@ -17,7 +18,7 @@ const HeroSection = () => {
           FLAVOR, EVERY TIME
         </p>
         <div className="flex flex-col sm:flex-row gap-3">
-          <a href="#" className="btn-primary text-center rounded">ORDER ONLINE</a>
+          <OrderOnlineDropdown className="btn-primary text-center rounded">ORDER ONLINE</OrderOnlineDropdown>
           <a href="#" className="btn-secondary text-center rounded">VIEW THE MENU</a>
         </div>
       </div>
