@@ -1,6 +1,6 @@
 const LocationsSection = () => {
   return (
-    <section id="locations" className="bg-muted py-10 md:py-12 px-4 md:px-8">
+    <section id="locations" className="bg-muted py-8 md:py-12 px-4 md:px-8">
       <div className="max-w-5xl mx-auto">
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-4">
           <h2 className="text-primary text-2xl md:text-4xl font-bold tracking-wide uppercase" style={{ fontFamily: 'var(--font-display)' }}>
