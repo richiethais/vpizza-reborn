@@ -50,6 +50,28 @@ const CateringEvents = () => {
           </div>
         </section>
 
+        {/* Catering Inquiries */}
+        <section className="bg-primary py-10 md:py-14 px-4 md:px-8">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2
+              className="text-primary-foreground text-2xl md:text-4xl font-bold tracking-wide mb-4"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              FOR CATERING INQUIRIES
+            </h2>
+            <p className="text-primary-foreground/70 text-sm mb-6">
+              Reach out to us directly and we'll get your event set up!
+            </p>
+            <a
+              href="mailto:FATBOYFRIEDRICE@GMAIL.COM"
+              className="bg-secondary text-secondary-foreground inline-flex items-center gap-3 rounded-full text-base md:text-lg px-10 py-4 font-bold hover:brightness-110 transition-all shadow-lg"
+            >
+              <Mail size={20} />
+              FATBOYFRIEDRICE@GMAIL.COM
+            </a>
+          </div>
+        </section>
+
         {/* Catering Menu */}
         <section className="py-12 md:py-16 px-4 md:px-8" style={{ backgroundColor: "#fdf2e9" }}>
           <div className="max-w-4xl mx-auto">
@@ -59,32 +81,6 @@ const CateringEvents = () => {
             </div>
             <div className="rounded-xl overflow-hidden shadow-lg border-2 border-primary">
               <img src={cateringMenu} alt="Fatboy Fried Rice Catering Menu" className="w-full h-auto" />
-            </div>
-          </div>
-        </section>
-
-        {/* Contact / Inquiries */}
-        <section className="bg-primary py-12 md:py-16 px-4 md:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2
-              className="text-primary-foreground text-2xl md:text-4xl font-bold tracking-wide mb-4"
-              style={{ fontFamily: "var(--font-display)" }}
-            >
-              FOR CATERING INQUIRIES
-            </h2>
-            <div className="border-2 border-primary-foreground/30 rounded-xl p-6 md:p-10 inline-block">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <Mail size={24} className="text-secondary" />
-                <p className="text-primary-foreground text-lg md:text-xl font-bold tracking-wider" style={{ fontFamily: "var(--font-display)" }}>
-                  EMAIL US
-                </p>
-              </div>
-              <a
-                href="mailto:FATBOYFRIEDRICE@GMAIL.COM"
-                className="btn-secondary inline-block rounded-full text-sm md:text-base px-8 py-3"
-              >
-                FATBOYFRIEDRICE@GMAIL.COM
-              </a>
             </div>
           </div>
         </section>
