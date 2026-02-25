@@ -10,7 +10,7 @@ const CateringEvents = () => {
       <Sidebar />
       <main className="md:ml-[220px] flex-1 mt-[56px] md:mt-0">
         {/* Hero banner */}
-        <section className="bg-primary py-12 md:py-20 px-4 text-center">
+        <section className="py-12 md:py-20 px-4 text-center" style={{ backgroundColor: "hsl(0, 50%, 35%)" }}>
           <img src={fatboyLogo} alt="Fatboy Fried Rice" className="h-24 md:h-32 w-auto mx-auto mb-4" />
           <h1
             className="text-primary-foreground text-4xl md:text-6xl font-bold tracking-wide mb-3"
