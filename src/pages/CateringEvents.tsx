@@ -2,7 +2,7 @@ import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import fatboyLogo from "@/assets/fatboy-logo-new.png";
 import cateringMenu from "@/assets/catering-menu.png";
-import { Mail, Calendar, UtensilsCrossed } from "lucide-react";
+import { Mail, Calendar, UtensilsCrossed, Instagram } from "lucide-react";
 
 const CateringEvents = () => {
   return (
@@ -41,8 +41,9 @@ const CateringEvents = () => {
                 href="https://www.instagram.com/fatboyfriedrice/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-secondary inline-block rounded-full text-sm px-8 py-3"
+                className="btn-secondary inline-flex items-center gap-2 rounded-full text-sm px-8 py-3"
               >
+                <Instagram size={18} />
                 @FATBOYFRIEDRICE
               </a>
             </div>
