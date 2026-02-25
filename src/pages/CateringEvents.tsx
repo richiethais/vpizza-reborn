@@ -64,24 +64,25 @@ const CateringEvents = () => {
         </section>
 
         {/* Contact / Inquiries */}
-        <section className="bg-primary py-12 md:py-16 px-4 md:px-8">
+        <section className="py-12 md:py-16 px-4 md:px-8" style={{ backgroundColor: "#fdf2e9" }}>
           <div className="max-w-3xl mx-auto text-center">
             <h2
-              className="text-primary-foreground text-2xl md:text-4xl font-bold tracking-wide mb-4"
+              className="text-primary text-2xl md:text-4xl font-bold tracking-wide mb-4"
               style={{ fontFamily: "var(--font-display)" }}
             >
               FOR CATERING INQUIRIES
             </h2>
-            <div className="border-2 border-primary-foreground/30 rounded-xl p-6 md:p-10 inline-block">
+            <div className="border-2 border-primary/30 rounded-xl p-6 md:p-10 inline-block">
               <div className="flex items-center justify-center gap-3 mb-4">
-                <Mail size={24} className="text-secondary" />
-                <p className="text-primary-foreground text-lg md:text-xl font-bold tracking-wider" style={{ fontFamily: "var(--font-display)" }}>
+                <Mail size={24} className="text-primary" />
+                <p className="text-primary text-lg md:text-xl font-bold tracking-wider" style={{ fontFamily: "var(--font-display)" }}>
                   EMAIL US
                 </p>
               </div>
               <a
                 href="mailto:FATBOYFRIEDRICE@GMAIL.COM"
-                className="btn-secondary inline-block rounded-full text-sm md:text-base px-8 py-3"
+                className="bg-primary text-primary-foreground inline-block rounded-full text-sm md:text-base px-8 py-3 font-bold tracking-wider hover:opacity-90 transition-opacity"
+                style={{ fontFamily: "var(--font-display)" }}
               >
                 FATBOYFRIEDRICE@GMAIL.COM
               </a>
