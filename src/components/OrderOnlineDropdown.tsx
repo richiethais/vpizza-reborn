@@ -9,9 +9,10 @@ const locations = [
 interface Props {
   children: React.ReactNode;
   className?: string;
+  dropUp?: boolean;
 }
 
-const OrderOnlineDropdown = ({ children, className }: Props) => {
+const OrderOnlineDropdown = ({ children, className, dropUp }: Props) => {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -29,7 +30,7 @@ const OrderOnlineDropdown = ({ children, className }: Props) => {
         {children}
       </button>
       {open && (
-        <div className="absolute z-50 mt-2 left-1/2 -translate-x-1/2 w-56 rounded-lg shadow-lg bg-background border border-border overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+        <div className={`absolute z-50 left-1/2 -translate-x-1/2 w-56 rounded-lg shadow-lg bg-background border border-border overflow-hidden animate-in fade-in duration-200 ${dropUp ? "bottom-full mb-2 slide-in-from-bottom-2" : "mt-2 slide-in-from-top-2"}`}>
           <p className="px-4 pt-3 pb-1 text-xs font-semibold text-muted-foreground uppercase tracking-wider">Choose a Location</p>
           {locations.map((loc) => (
             <a
