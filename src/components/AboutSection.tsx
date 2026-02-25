@@ -2,11 +2,10 @@ import pizzaAbout from "@/assets/pizza-about.jpg";
 
 const AboutSection = () => {
   return (
-    <section className="bg-background py-12 md:py-16 px-4 md:px-8">
+    <section id="story" className="bg-background py-12 md:py-16 px-4 md:px-8">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-8 md:gap-12 items-start">
         <div className="flex-1">
           <h2 className="section-heading mb-6">THE FATBOY STORY</h2>
-          <a href="#" className="btn-outline inline-block mb-6 md:mb-8 rounded">ABOUT US</a>
           <div className="text-foreground leading-relaxed space-y-4 text-sm md:text-base">
             <p>
               At Fatboy Fried Rice, we serve up bold, authentic Asian fusion fried rice

@@ -8,7 +8,7 @@ const navItems = [
   { icon: Home, label: "HOME", href: "/" },
   { icon: UtensilsCrossed, label: "MENU", href: "#" },
   { icon: Calendar, label: "CATERING & EVENTS", href: "/catering-events" },
-  { icon: BookOpen, label: "OUR STORY", href: "#" },
+  { icon: BookOpen, label: "OUR STORY", href: "/#story" },
   { icon: MapPin, label: "LOCATIONS", href: "/#locations" },
   { icon: Phone, label: "CONTACT", href: "/contact" },
 ];
