@@ -39,6 +39,10 @@ const Footer = () => {
                 <MapPin size={14} className="text-secondary shrink-0" />
                 11450 Beach Blvd, Jacksonville, FL
               </a>
+              <a href="tel:+17819718865" className="flex items-center gap-2 text-primary-foreground/70 hover:text-secondary text-sm transition-colors">
+                <Phone size={14} className="text-secondary shrink-0" />
+                (781) 971-8865
+              </a>
               <div className="flex items-center gap-2 text-primary-foreground/70 text-sm">
                 <Clock size={14} className="text-secondary shrink-0" />
                 Wed–Sun: 12:00 PM – 9:00 PM
@@ -53,6 +57,10 @@ const Footer = () => {
               <a href="https://www.google.com/maps/search/?api=1&query=1429+Cassat+Avenue+Jacksonville+FL" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary-foreground/70 hover:text-secondary text-sm transition-colors">
                 <MapPin size={14} className="text-secondary shrink-0" />
                 1429 Cassat Avenue, Jacksonville, FL
+              </a>
+              <a href="tel:+14302455852" className="flex items-center gap-2 text-primary-foreground/70 hover:text-secondary text-sm transition-colors">
+                <Phone size={14} className="text-secondary shrink-0" />
+                (430) 245-5852
               </a>
               <div className="flex items-center gap-2 text-primary-foreground/70 text-sm">
                 <Clock size={14} className="text-secondary shrink-0" />
