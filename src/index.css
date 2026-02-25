@@ -99,13 +99,13 @@
 
   .hero-title {
     font-family: var(--font-display);
-    @apply text-5xl sm:text-7xl md:text-[8rem] font-bold text-primary-foreground leading-none;
+    @apply text-[3.2rem] sm:text-7xl md:text-[8rem] font-bold text-primary-foreground leading-none;
     text-shadow: 3px 5px 0px rgba(0,0,0,0.3);
   }
 
   .hero-subtitle {
     font-family: var(--font-body);
-    @apply text-primary-foreground text-lg md:text-2xl font-bold tracking-wider uppercase;
+    @apply text-primary-foreground text-base md:text-2xl font-bold tracking-wider uppercase;
     text-shadow: 1px 2px 4px rgba(0,0,0,0.4);
   }
 }

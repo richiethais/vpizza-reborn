@@ -27,7 +27,6 @@ const Index = () => {
       <main className="md:ml-[220px] flex-1 mt-[56px] md:mt-0">
         <HeroSection />
         <AboutSection />
-        <AboutSection />
         <LocationsSection />
         <PizzaStonesSection />
         <Footer />
