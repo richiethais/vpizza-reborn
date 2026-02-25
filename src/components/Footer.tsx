@@ -22,7 +22,7 @@ const Footer = () => {
           ))}
         </div>
         <div className="flex flex-col items-center">
-          <img src={fatboyLogo} alt="Fatboy Fried Rice" className="h-24 w-auto" />
+          <img src={fatboyLogo} alt="Fatboy Fried Rice" className="h-32 w-auto" />
           <p className="text-primary text-lg font-bold mt-2" style={{ fontFamily: 'var(--font-display)' }}>FATBOY FRIED RICE</p>
         </div>
       </div>
