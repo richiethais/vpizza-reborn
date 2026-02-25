@@ -13,7 +13,7 @@ const CateringEvents = () => {
         <section className="bg-primary py-4 md:py-6 px-4 text-center">
           <img src={fatboyLogo} alt="Fatboy Fried Rice" className="h-24 md:h-32 w-auto mx-auto mb-2" />
           <h1
-            className="text-primary-foreground text-4xl md:text-6xl font-bold tracking-wide mb-3"
+            className="text-primary-foreground text-4xl md:text-6xl font-bold tracking-wide mb-1"
             style={{ fontFamily: "var(--font-display)" }}
           >
             CATERING & EVENTS
