@@ -30,21 +30,21 @@ const CateringEvents = () => {
               <Calendar size={28} className="text-primary" />
               <h2 className="section-heading">EVENTS</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="border-2 border-primary rounded-lg p-6">
-                <h3 className="text-primary text-xl font-bold tracking-wide mb-2" style={{ fontFamily: "var(--font-display)" }}>
-                  FOOD TRUCK FRIDAY
-                </h3>
-                <p className="text-primary font-bold text-sm tracking-wider mb-1" style={{ fontFamily: "var(--font-display)" }}>EVERY FRIDAY 5–9 PM</p>
-                <p className="text-muted-foreground text-sm">Join us every Friday at our downtown location for live music, good vibes, and the best fried rice in Jacksonville.</p>
-              </div>
-              <div className="border-2 border-primary rounded-lg p-6">
-                <h3 className="text-primary text-xl font-bold tracking-wide mb-2" style={{ fontFamily: "var(--font-display)" }}>
-                  WEEKEND SPECIALS
-                </h3>
-                <p className="text-primary font-bold text-sm tracking-wider mb-1" style={{ fontFamily: "var(--font-display)" }}>SAT & SUN ALL DAY</p>
-                <p className="text-muted-foreground text-sm">Special weekend menu items available at all locations. Follow us on social media for the latest specials!</p>
-              </div>
+            <div className="border-2 border-primary rounded-lg p-8 text-center">
+              <p className="text-primary text-lg font-bold tracking-wide mb-3" style={{ fontFamily: "var(--font-display)" }}>
+                WE'RE ALWAYS COOKING UP SOMETHING NEW!
+              </p>
+              <p className="text-muted-foreground text-sm mb-4">
+                Follow us on Instagram for the latest events, pop-ups, and special announcements.
+              </p>
+              <a
+                href="https://www.instagram.com/fatboyfriedrice/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary inline-block rounded-full text-sm px-8 py-3"
+              >
+                @FATBOYFRIEDRICE
+              </a>
             </div>
           </div>
         </section>
