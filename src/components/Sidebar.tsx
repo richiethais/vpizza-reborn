@@ -77,6 +77,16 @@ const Sidebar = () => {
           ORDER ONLINE
         </OrderOnlineDropdown>
       </div>
+
+      {/* Mobile sticky bottom Order Online button */}
+      {!open && (
+        <div className="fixed bottom-0 left-0 right-0 z-50 p-3 md:hidden">
+          <OrderOnlineDropdown className="btn-secondary w-full rounded-full py-3 text-sm font-bold flex items-center justify-center gap-2 shadow-lg" dropUp>
+            <ShoppingCart size={18} />
+            ORDER ONLINE
+          </OrderOnlineDropdown>
+        </div>
+      )}
     </>
   );
 };
