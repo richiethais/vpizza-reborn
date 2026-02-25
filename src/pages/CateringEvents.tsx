@@ -1,10 +1,38 @@
+import { useState, useEffect } from "react";
 import Sidebar from "@/components/Sidebar";
 import Footer from "@/components/Footer";
 import fatboyLogo from "@/assets/fatboy-logo-new.png";
 import cateringMenu from "@/assets/catering-menu.png";
-import { Mail, Calendar, UtensilsCrossed, Instagram } from "lucide-react";
+import { Mail, Calendar, UtensilsCrossed, Instagram, MapPin, AlertTriangle, Megaphone } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
+
+interface EventRow {
+  id: string;
+  title: string;
+  description: string | null;
+  event_date: string | null;
+  location: string | null;
+  event_type: string;
+  is_active: boolean;
+}
 
 const CateringEvents = () => {
+  const [events, setEvents] = useState<EventRow[]>([]);
+
+  useEffect(() => {
+    supabase.from("events").select("*").eq("is_active", true).order("event_date", { ascending: true }).then(({ data }) => {
+      if (data) setEvents(data as EventRow[]);
+    });
+  }, []);
+
+  const getEventIcon = (type: string) => {
+    switch (type) {
+      case "closure": return <AlertTriangle size={18} className="text-primary" />;
+      case "announcement": return <Megaphone size={18} className="text-secondary" />;
+      default: return <Calendar size={18} className="text-primary" />;
+    }
+  };
+
   return (
     <div className="flex min-h-screen">
       <Sidebar />
@@ -30,6 +58,27 @@ const CateringEvents = () => {
               <Calendar size={28} className="text-primary" />
               <h2 className="section-heading">EVENTS</h2>
             </div>
+
+            {events.length > 0 && (
+              <div className="space-y-4 mb-8">
+                {events.map((ev) => (
+                  <div key={ev.id} className={`border-2 rounded-lg p-5 ${ev.event_type === "closure" ? "border-primary bg-primary/5" : "border-primary/20"}`}>
+                    <div className="flex items-start gap-3">
+                      {getEventIcon(ev.event_type)}
+                      <div>
+                        <p className="text-primary font-bold tracking-wide" style={{ fontFamily: "var(--font-display)" }}>{ev.title}</p>
+                        {ev.description && <p className="text-muted-foreground text-sm mt-1">{ev.description}</p>}
+                        <div className="flex gap-3 mt-2 text-xs text-muted-foreground">
+                          {ev.event_date && <span>📅 {new Date(ev.event_date).toLocaleDateString()}</span>}
+                          {ev.location && <span className="flex items-center gap-1"><MapPin size={12} /> {ev.location}</span>}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
             <div className="border-2 border-primary rounded-lg p-8 text-center">
               <p className="text-primary text-lg font-bold tracking-wide mb-3" style={{ fontFamily: "var(--font-display)" }}>
                 WE'RE ALWAYS COOKING UP SOMETHING NEW!

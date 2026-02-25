@@ -10,7 +10,7 @@ const navItems = [
   { icon: Calendar, label: "CATERING & EVENTS", href: "/catering-events" },
   { icon: BookOpen, label: "OUR STORY", href: "#" },
   { icon: MapPin, label: "LOCATIONS", href: "#" },
-  { icon: Phone, label: "CONTACT", href: "/catering-events" },
+  { icon: Phone, label: "CONTACT", href: "/contact" },
 ];
 
 const Sidebar = () => {
