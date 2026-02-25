@@ -18,7 +18,7 @@ const Sidebar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const isActive = (href: string) => href !== "#" && location.pathname === href;
+  const isActive = (href: string) => href === "/" && location.pathname === "/";
 
   return (
     <>
@@ -56,12 +56,12 @@ const Sidebar = () => {
                   navigate(href);
                 }
               }}
-              className={`nav-link text-xs py-1.5 px-2 ${
+              className={`nav-link text-sm py-2 px-2 ${
                 isActive(href) ? "bg-primary/10 text-primary" : ""
               }`}
             >
-              <Icon size={16} strokeWidth={1.5} />
-              {label}
+              <Icon size={18} strokeWidth={1.5} />
+              <span className="leading-tight">{label}</span>
             </a>
           ))}
         </nav>
