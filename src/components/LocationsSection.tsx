@@ -9,31 +9,18 @@ const LocationsSection = () => {
         </div>
 
         {/* Google Maps - one per location */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-          <div className="w-full rounded overflow-hidden border-2 border-primary/20">
-            <iframe
-              src="https://www.google.com/maps?q=11450+Beach+Blvd,+Jacksonville,+FL&output=embed"
-              width="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Fatboy Fried Rice - Southside"
-              className="w-full h-[220px] md:h-[280px]"
-            />
-          </div>
-          <div className="w-full rounded overflow-hidden border-2 border-primary/20">
-            <iframe
-              src="https://www.google.com/maps?q=1429+Cassat+Ave,+Jacksonville,+FL&output=embed"
-              width="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Fatboy Fried Rice 2 - Westside"
-              className="w-full h-[220px] md:h-[280px]"
-            />
-          </div>
+        {/* Single Google Map searching for both Fatboy locations */}
+        <div className="w-full rounded overflow-hidden border-2 border-primary/20 mb-6">
+          <iframe
+            src="https://www.google.com/maps?q=Fatboy+Fried+Rice+Jacksonville+FL&output=embed&z=11"
+            width="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Fatboy Fried Rice Locations"
+            className="w-full h-[280px] md:h-[400px]"
+          />
         </div>
 
         {/* Location cards */}
