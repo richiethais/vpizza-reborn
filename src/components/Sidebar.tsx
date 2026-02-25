@@ -18,7 +18,7 @@ const Sidebar = () => {
     <>
       {/* Mobile top bar */}
       <div className="fixed top-0 left-0 right-0 z-50 bg-background flex items-center justify-between px-4 py-2 md:hidden border-b border-border">
-        <img src={fatboyLogo} alt="Fatboy Fried Rice" className="h-12 w-auto" />
+        <img src={fatboyLogo} alt="Fatboy Fried Rice" className="h-16 w-auto" />
         <button onClick={() => setOpen(!open)} className="text-primary">
           {open ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -27,7 +27,7 @@ const Sidebar = () => {
       {/* Desktop Sidebar */}
       <aside className="fixed left-0 top-0 h-full w-[220px] bg-background z-50 flex-col px-5 py-6 overflow-y-auto hidden md:flex border-r border-border">
         <div className="flex flex-col items-center mb-6">
-          <img src={fatboyLogo} alt="Fatboy Fried Rice" className="h-32 w-auto mb-2" />
+          <img src={fatboyLogo} alt="Fatboy Fried Rice" className="h-40 w-auto mb-2" />
         </div>
         <nav className="flex flex-col gap-0.5 flex-1">
           {navItems.map(({ icon: Icon, label }) => (
@@ -50,7 +50,7 @@ const Sidebar = () => {
         }`}
       >
         <div className="flex flex-col items-center mb-6">
-          <img src={fatboyLogo} alt="Fatboy Fried Rice" className="h-24 w-auto mb-2" />
+          <img src={fatboyLogo} alt="Fatboy Fried Rice" className="h-32 w-auto mb-2" />
         </div>
         <nav className="flex flex-col gap-1">
           {navItems.map(({ icon: Icon, label }, i) => (
