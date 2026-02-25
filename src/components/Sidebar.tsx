@@ -1,6 +1,6 @@
 import { UtensilsCrossed, Calendar, BookOpen, Truck, MapPin, Phone, Menu, X, ShoppingCart } from "lucide-react";
 import { useState } from "react";
-import fatboyLogo from "@/assets/fatboy-logo.webp";
+import fatboyLogo from "@/assets/fatboy-logo-new.png";
 
 const navItems = [
   { icon: UtensilsCrossed, label: "MENU" },

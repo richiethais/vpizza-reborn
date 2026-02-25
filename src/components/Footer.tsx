@@ -1,4 +1,4 @@
-import fatboyLogo from "@/assets/fatboy-logo.webp";
+import fatboyLogo from "@/assets/fatboy-logo-new.png";
 
 const footerLinks = [
   ["Our Story", "Menu", "Gift Cards"],
