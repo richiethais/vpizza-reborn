@@ -17,9 +17,9 @@ const HeroSection = () => {
            style={{ fontFamily: 'var(--font-display)', textShadow: '1px 2px 4px rgba(0,0,0,0.4)' }}>
           FLAVOR, EVERY TIME
         </p>
-        <div className="flex flex-col sm:flex-row gap-2.5 md:gap-3 w-full sm:w-auto px-4 sm:px-0">
-          <OrderOnlineDropdown className="btn-primary text-center rounded px-6 py-2.5 md:px-8 md:py-3 text-xs md:text-sm">ORDER ONLINE</OrderOnlineDropdown>
-          <a href="/menu" className="btn-secondary text-center rounded px-6 py-2.5 md:px-8 md:py-3 text-xs md:text-sm">VIEW THE MENU</a>
+        <div className="flex flex-col sm:flex-row gap-2.5 md:gap-3 w-auto">
+          <OrderOnlineDropdown className="btn-primary text-center rounded px-5 py-2 md:px-8 md:py-3 text-xs md:text-sm whitespace-nowrap">ORDER ONLINE</OrderOnlineDropdown>
+          <a href="/menu" className="btn-secondary text-center rounded px-5 py-2 md:px-8 md:py-3 text-xs md:text-sm whitespace-nowrap">VIEW THE MENU</a>
         </div>
       </div>
     </section>
