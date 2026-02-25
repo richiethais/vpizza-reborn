@@ -21,11 +21,11 @@ const deliveryServices = [
 
 const EventsSection = () => {
   return (
-    <section className="py-16 md:py-24 px-4 md:px-8" style={{ backgroundColor: "#d4b896" }}>
+    <section className="bg-primary py-16 md:py-24 px-4 md:px-8">
       <div className="max-w-5xl mx-auto">
         <h2
-          className="text-center text-3xl md:text-5xl lg:text-6xl font-bold tracking-wide mb-12 md:mb-16"
-          style={{ fontFamily: "var(--font-display)", color: "#2c1810" }}
+          className="text-center text-3xl md:text-5xl lg:text-6xl font-bold tracking-wide mb-12 md:mb-16 text-primary-foreground"
+          style={{ fontFamily: "var(--font-display)" }}
         >
           ORDER FOR DELIVERY
         </h2>
@@ -52,12 +52,7 @@ const EventsSection = () => {
                     href={btn.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-center px-5 py-3 rounded-full font-bold text-xs md:text-sm tracking-wider uppercase transition-all hover:brightness-110 shadow-md"
-                    style={{
-                      fontFamily: "var(--font-display)",
-                      backgroundColor: "#4a2c2a",
-                      color: "#d4b896",
-                    }}
+                    className="btn-secondary text-center px-5 py-3 rounded-full text-xs md:text-sm shadow-md"
                   >
                     {btn.label}
                   </a>
