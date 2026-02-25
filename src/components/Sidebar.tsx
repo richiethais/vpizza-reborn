@@ -1,4 +1,4 @@
-import { UtensilsCrossed, Calendar, BookOpen, Truck, MapPin, Phone, Menu, X, ShoppingCart, Home } from "lucide-react";
+import { UtensilsCrossed, Calendar, BookOpen, MapPin, Phone, Menu, X, ShoppingCart, Home } from "lucide-react";
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import fatboyLogo from "@/assets/fatboy-logo-new.png";
@@ -7,9 +7,8 @@ import OrderOnlineDropdown from "./OrderOnlineDropdown";
 const navItems = [
   { icon: Home, label: "HOME", href: "/" },
   { icon: UtensilsCrossed, label: "MENU", href: "#" },
-  { icon: Calendar, label: "EVENTS", href: "/catering-events" },
+  { icon: Calendar, label: "CATERING & EVENTS", href: "/catering-events" },
   { icon: BookOpen, label: "OUR STORY", href: "#" },
-  { icon: Truck, label: "CATERING", href: "/catering-events" },
   { icon: MapPin, label: "LOCATIONS", href: "#" },
   { icon: Phone, label: "CONTACT", href: "/catering-events" },
 ];
