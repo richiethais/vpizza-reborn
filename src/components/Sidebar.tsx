@@ -1,19 +1,21 @@
 import { UtensilsCrossed, Calendar, BookOpen, Truck, MapPin, Phone, Menu, X, ShoppingCart } from "lucide-react";
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import fatboyLogo from "@/assets/fatboy-logo-new.png";
 import OrderOnlineDropdown from "./OrderOnlineDropdown";
 
 const navItems = [
-  { icon: UtensilsCrossed, label: "MENU" },
-  { icon: Calendar, label: "EVENTS" },
-  { icon: BookOpen, label: "OUR STORY" },
-  { icon: Truck, label: "CATERING" },
-  { icon: MapPin, label: "LOCATIONS" },
-  { icon: Phone, label: "CONTACT US" },
+  { icon: UtensilsCrossed, label: "MENU", href: "#" },
+  { icon: Calendar, label: "EVENTS", href: "/catering-events" },
+  { icon: BookOpen, label: "OUR STORY", href: "#" },
+  { icon: Truck, label: "CATERING", href: "/catering-events" },
+  { icon: MapPin, label: "LOCATIONS", href: "#" },
+  { icon: Phone, label: "CONTACT US", href: "/catering-events" },
 ];
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -31,8 +33,8 @@ const Sidebar = () => {
           <img src={fatboyLogo} alt="Fatboy Fried Rice" className="h-40 w-auto mb-2" />
         </div>
         <nav className="flex flex-col gap-0.5 flex-1">
-          {navItems.map(({ icon: Icon, label }) => (
-            <a key={label} href="#" className="nav-link">
+          {navItems.map(({ icon: Icon, label, href }) => (
+            <a key={label} href={href} onClick={(e) => { if (href.startsWith("/")) { e.preventDefault(); navigate(href); }}} className="nav-link">
               <Icon size={18} strokeWidth={1.5} />
               {label}
             </a>
@@ -54,15 +56,15 @@ const Sidebar = () => {
           <img src={fatboyLogo} alt="Fatboy Fried Rice" className="h-32 w-auto mb-2" />
         </div>
         <nav className="flex flex-col gap-1">
-          {navItems.map(({ icon: Icon, label }, i) => (
+          {navItems.map(({ icon: Icon, label, href }, i) => (
             <a
               key={label}
-              href="#"
+              href={href}
               className={`nav-link text-base transition-all duration-300 ${
                 open ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-4"
               }`}
               style={{ transitionDelay: open ? `${i * 50}ms` : "0ms" }}
-              onClick={() => setOpen(false)}
+              onClick={(e) => { if (href.startsWith("/")) { e.preventDefault(); navigate(href); } setOpen(false); }}
             >
               <Icon size={20} strokeWidth={1.5} />
               {label}
