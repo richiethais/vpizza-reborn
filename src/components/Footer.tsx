@@ -33,7 +33,7 @@ const Footer = () => {
             {/* Location 1 */}
             <div className="flex flex-col gap-1.5">
               <p className="text-primary-foreground font-bold text-sm tracking-wide" style={{ fontFamily: "var(--font-display)" }}>
-                LOCATION #1 — SOUTHSIDE
+                SOUTHSIDE
               </p>
               <a href="https://www.google.com/maps/search/?api=1&query=11450+Beach+Blvd+Jacksonville+FL" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary-foreground/70 hover:text-secondary text-sm transition-colors">
                 <MapPin size={14} className="text-secondary shrink-0" />
@@ -48,7 +48,7 @@ const Footer = () => {
             {/* Location 2 */}
             <div className="flex flex-col gap-1.5">
               <p className="text-primary-foreground font-bold text-sm tracking-wide" style={{ fontFamily: "var(--font-display)" }}>
-                LOCATION #2 — WESTSIDE
+                WESTSIDE
               </p>
               <a href="https://www.google.com/maps/search/?api=1&query=1429+Cassat+Avenue+Jacksonville+FL" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-primary-foreground/70 hover:text-secondary text-sm transition-colors">
                 <MapPin size={14} className="text-secondary shrink-0" />
